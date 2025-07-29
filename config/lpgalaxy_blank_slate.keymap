@@ -46,11 +46,13 @@
 		bindings = <&kp LSHFT>, <&caps_word>;
 	};
     };
-
     behaviors {
         meh_modifier: meh {
-            compatible = "zmk,behavior-mod-momentary";
-            bindings = <MOD_LCTL MOD_LALT MOD_LSFT>;
+            compatible = "zmk,behavior-mod-morph";
+            label = "MEH_MOD";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LSHFT))>, <&kp LC(LA(LSHFT))>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
